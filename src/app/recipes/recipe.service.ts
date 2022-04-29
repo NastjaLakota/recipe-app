@@ -1,28 +1,36 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+
+import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
-import { Recipe } from './recipe.model';
 
 @Injectable()
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
-  private recipes: Recipe[] = [
-    new Recipe(
-      'A Test Recipe',
-      'This is simply a test',
-      'https://www.seriouseats.com/thmb/ayLBdQRuMh06VOyc4JftBa7Ubvo=/735x0/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2016__08__20160802-oyakodon-4-a3b75ad6fb36491b9618372db8cf54d2.jpg',
-      [new Ingredient('Meat', 1), new Ingredient('Potato', 4)]
-    ),
-    new Recipe(
-      'Another Test Recipe',
-      'This is simply a test',
-      'https://www.seriouseats.com/thmb/ayLBdQRuMh06VOyc4JftBa7Ubvo=/735x0/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2016__08__20160802-oyakodon-4-a3b75ad6fb36491b9618372db8cf54d2.jpg',
-      [new Ingredient('Buns', 5), new Ingredient('Meat', 1)]
-    ),
-  ];
+
+  // private recipes: Recipe[] = [
+  //   new Recipe(
+  //     'Tasty Schnitzel',
+  //     'A super-tasty Schnitzel - just awesome!',
+  //     'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG',
+  //     [new Ingredient('Meat', 1), new Ingredient('French Fries', 20)]
+  //   ),
+  //   new Recipe(
+  //     'Big Fat Burger',
+  //     'What else you need to say?',
+  //     'https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg',
+  //     [new Ingredient('Buns', 2), new Ingredient('Meat', 1)]
+  //   )
+  // ];
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService) {}
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
@@ -32,7 +40,7 @@ export class RecipeService {
     return this.recipes[index];
   }
 
-  addIngToShoppingList(ingredients: Ingredient[]) {
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
   }
 
