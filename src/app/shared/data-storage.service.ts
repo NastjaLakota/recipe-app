@@ -19,7 +19,7 @@ export class DataStorageService {
     this.http
       .put(
         // 'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json',
-        'https://ng-recipe-book-l280-default-rtdb.europe-west1.firebasedatabase.app/',
+        'https://ng-recipe-book-l280-default-rtdb.europe-west1.firebasedatabase.app/recipes.json',
         recipes
       )
       .subscribe((response) => {
@@ -31,7 +31,7 @@ export class DataStorageService {
     return this.http
       .get<Recipe[]>(
         // 'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json'
-        'https://ng-recipe-book-l280-default-rtdb.europe-west1.firebasedatabase.app/'
+        'https://ng-recipe-book-l280-default-rtdb.europe-west1.firebasedatabase.app/recipes.json'
       )
       .pipe(
         map((recipes) => {
