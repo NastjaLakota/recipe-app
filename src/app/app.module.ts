@@ -8,9 +8,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
+<<<<<<< Updated upstream
 import { CoreModule } from './core.module';
 import { AuthModule } from './auth/auth.module';
 import { LoggingService } from './logging.service';
+=======
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import * as fromApp from './store/app.reducer';
+import { AuthEffects } from './auth/store/auth.effects';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -24,9 +31,23 @@ import { LoggingService } from './logging.service';
     // ShoppingListModule,
     // AuthModule,
     SharedModule,
+<<<<<<< Updated upstream
     CoreModule,
   ],
   // providers: [LoggingService],
+=======
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([AuthEffects]),
+  ],
+  providers: [
+    RecipeService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
+>>>>>>> Stashed changes
   bootstrap: [AppComponent],
 })
 export class AppModule {}
