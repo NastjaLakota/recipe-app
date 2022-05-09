@@ -11,17 +11,7 @@
   },
   "private": true,
   "dependencies": {
-<<<<<<< Updated upstream
-    "@angular/animations": "^9.0.0",
-    "@angular/common": "^9.0.0",
-    "@angular/compiler": "^9.0.0",
-    "@angular/core": "^9.0.0",
-    "@angular/forms": "^9.0.0",
-    "@angular/platform-browser": "^9.0.0",
-    "@angular/platform-browser-dynamic": "^9.0.0",
-    "@angular/router": "^9.0.0",
-=======
-    "@angular/animations": "^13.3.5",
+    "@angular/animations": "^13.3.6",
     "@angular/common": "^13.3.5",
     "@angular/compiler": "^13.3.5",
     "@angular/core": "^13.3.5",
@@ -30,26 +20,11 @@
     "@angular/platform-browser-dynamic": "^13.3.5",
     "@angular/router": "^13.3.5",
     "@ngrx/effects": "^13.2.0",
->>>>>>> Stashed changes
+    "@ngrx/router-store": "^13.2.0",
     "@ngrx/store": "^13.2.0",
     "bootstrap": "3.3.7",
     "core-js": "^3.1.2",
     "rxjs": "^6.0.0",
-<<<<<<< Updated upstream
-    "tslib": "^1.9.0",
-    "zone.js": "~0.10.2"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~0.900.0",
-    "@angular/cli": "^9.0.0",
-    "@angular/compiler-cli": "^9.0.0",
-    "@angular/language-service": "^9.0.0",
-    "@types/jasmine": "~3.5.7",
-    "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~13.7.7",
-    "codelyzer": "~5.2.1",
-    "jasmine-core": "~3.5.0",
-=======
     "tslib": "^2.4.0",
     "zone.js": "~0.11.5"
   },
@@ -58,27 +33,21 @@
     "@angular/cli": "^13.3.4",
     "@angular/compiler-cli": "^13.3.5",
     "@angular/language-service": "^13.3.5",
+    "@ngrx/store-devtools": "^13.2.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
-    "jasmine-core": "~2.99.1",
->>>>>>> Stashed changes
+    "jasmine-core": "~3.8.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.4.1",
+    "karma": "~6.3.19",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.1",
     "karma-jasmine": "~3.1.1",
-    "karma-jasmine-html-reporter": "^1.5.2",
-    "protractor": "~5.4.0",
-<<<<<<< Updated upstream
-    "ts-node": "~8.6.2",
-    "tslint": "~6.0.0",
-    "typescript": "^3.7.5"
-=======
+    "karma-jasmine-html-reporter": "^1.7.0",
+    "protractor": "~7.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "4.6.4"
->>>>>>> Stashed changes
   }
 }

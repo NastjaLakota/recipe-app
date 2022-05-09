@@ -1,15 +1,7 @@
 {
   "hosting": {
     "public": "dist/second-project",
-<<<<<<< Updated upstream
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-=======
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
->>>>>>> Stashed changes
     "rewrites": [
       {
         "source": "**",

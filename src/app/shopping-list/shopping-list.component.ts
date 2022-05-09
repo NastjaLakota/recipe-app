@@ -1,11 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-<<<<<<< Updated upstream
-import { Subscription } from 'rxjs';
-import { LoggingService } from '../logging.service';
-=======
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
->>>>>>> Stashed changes
 
 import { Ingredient } from '../shared/ingredient.model';
 // import { ShoppingListService } from './shopping-list.service';
@@ -23,21 +18,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
 
   constructor(
-<<<<<<< Updated upstream
-    private slService: ShoppingListService,
-    private loggingServise: LoggingService
-  ) {}
-
-  ngOnInit() {
-    this.ingredients = this.slService.getIngredients();
-    this.subscription = this.slService.ingredientsChanged.subscribe(
-      (ingredients: Ingredient[]) => {
-        this.ingredients = ingredients;
-      }
-    );
-
-    this.loggingServise.printLog('Hello from ShoppingListComponent ngOnInit!');
-=======
     // private slService: ShoppingListService,
     private store: Store<fromApp.AppState>
   ) {}
@@ -50,7 +30,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     //     this.ingredients = ingredients;
     //   }
     // );
->>>>>>> Stashed changes
   }
 
   onEditItem(index: number) {

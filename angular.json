@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-complete-guide-update": {
+    "second-project": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -91,7 +91,7 @@
         }
       }
     },
-    "ng-complete-guide-update-e2e": {
+    "second-project-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",

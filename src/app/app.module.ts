@@ -1,23 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
-<<<<<<< Updated upstream
-import { CoreModule } from './core.module';
-import { AuthModule } from './auth/auth.module';
-import { LoggingService } from './logging.service';
-=======
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromApp from './store/app.reducer';
 import { AuthEffects } from './auth/store/auth.effects';
->>>>>>> Stashed changes
+import { RecipeService } from './recipes/recipe.service';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { RecipeEffects } from './recipes/store/recipe.effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -30,14 +31,12 @@ import { AuthEffects } from './auth/store/auth.effects';
     // RecipesModule,
     // ShoppingListModule,
     // AuthModule,
+    StoreDevtoolsModule.instrument({ logOnly: environment.production }),
+    StoreRouterConnectingModule.forRoot(),
     SharedModule,
-<<<<<<< Updated upstream
-    CoreModule,
-  ],
-  // providers: [LoggingService],
-=======
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipeEffects]),
+    BrowserAnimationsModule,
   ],
   providers: [
     RecipeService,
@@ -47,7 +46,6 @@ import { AuthEffects } from './auth/store/auth.effects';
       multi: true,
     },
   ],
->>>>>>> Stashed changes
   bootstrap: [AppComponent],
 })
 export class AppModule {}
